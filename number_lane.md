@@ -6,11 +6,11 @@ This mobile application is developed by **Shubham Pawar** to bring you an engagi
 
 ### Data Collected by the App
 
-**Number Lane** is designed with your privacy as a priority. Here’s how your game progress is managed:
+**Number Lane** is designed with your privacy as a priority. Here’s how your game progress and multiplayer data are managed:
 
-- **Game Progress:** Your game progress is saved to [Firestore](https://firebase.google.com/docs/firestore) when an internet connection is available. This cloud storage securely saves your progress so that you can resume your game across different sessions and devices.
-- **Local Storage Backup:** When an internet connection is not available, your progress is saved locally on your device, allowing you to continue playing seamlessly.
-- **Google Login Integration:** Google Login is used solely for user authentication to save your progress and facilitate identification for multiplayer features. No additional personally identifiable information is collected beyond what is required for these purposes.
+- **Game Progress:** Your level progress is saved using **Play Games Services**, which securely stores your achievements and progress across sessions and devices. This ensures a seamless experience even if you switch devices.
+- **Multiplayer Data:** **Firestore** is used solely for managing multiplayer sessions — such as room creation, player status, and game results. No personal data is stored beyond what is required for these multiplayer features.
+- **Local Storage Backup:** Your progress is also cached locally on your device for instant access and offline play.
 
 ### Permissions Requested by the App
 
@@ -18,20 +18,21 @@ The app only requires the following permission to function optimally:
 
 | Permission                         | Reason for Request                                                                                     |
 |------------------------------------|--------------------------------------------------------------------------------------------------------|
-| `android.permission.INTERNET`      | Necessary for accessing Firestore through Google Login to store game progress and for enabling multiplayer functionalities. |
+| `android.permission.INTERNET`      | Required to access Play Games Services for syncing progress and Firestore for multiplayer features.    |
 
 ### How Your Data Is Handled
 
-- **Cloud Storage with Firestore:** When connected to the internet, your game progress is securely stored on Firestore. This allows you to restore your game progress across devices and sessions, and to participate in multiplayer modes.
-- **Local Storage Backup:** If an internet connection is unavailable, your game progress is stored locally. Once connectivity is restored, synchronization may occur to update your progress on Firestore.
-- **User Authentication:** Google Login is integrated only for authenticating users to safely save and restore game progress, as well as manage multiplayer sessions. No extra personal information is collected beyond what is necessary for these functions.
+- **Play Games Services:** Used for login and securely storing your level progress, achievements, and identity in the game. No additional personally identifiable information is collected beyond what is necessary.
+- **Cloud Multiplayer with Firestore:** Only multiplayer-related data (e.g., player readiness, scores, game state) is temporarily stored in Firestore. This data is used to enable real-time multiplayer interactions and may be deleted after the session ends.
+- **Local Backup:** Progress is stored locally to ensure uninterrupted play even when offline.
 
 ### Your Control Over Personal Data
 
 You have complete control over your data:
 
 - **Clearing Data:** Clearing the app’s data or uninstalling the app will remove any locally saved game progress.
-- **Revoking Permissions:** You can revoke permissions or disconnect your Google account from your device settings at any time.
+- **Managing Play Games Account:** You can manage or sign out of Play Games Services via the Play Games app or device settings.
+- **Multiplayer Session Data:** Multiplayer session data is only temporary and automatically managed by the system.
 
 If you have any questions or concerns regarding your privacy while using **Number Lane**, please feel free to reach out at [skpawar1305@gmail.com](mailto:skpawar1305@gmail.com).
 
